@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Reddit Analyzer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body style="background-color:lavenderblush;">
+            <div class="container" id="2a">
+            <br><br><br><br>
+                <div class="row">
+                    <div class="col-sm-6">
+                    <h1 class="display-4 text-center"><br>Reddit Analyzer</h1>
+                    <h3 id="h2">Analyze a Reddit Username</h3>
+                    </div>
+
+                        <div class="jumbotron col-sm-6" style="background-color:lavender;">
+                            <form id="loginForm" autocomplete="on">
+                                <h1>Login</h1>
+                                <div class="form-group">
+                                     <label for="usrLogin">Username:</label>
+                                      <input type="text" class="form-control" id="usrLogin" autocomplete="name">
+                                </div>
+                               
+                                <button id="1a" type="button" class="btn btn-success">Login</button>
+                                <button id="4a" type="button" class="btn btn-success">SignUp</button>
+                            </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            
+             <div id="3a">
+
+
+                <h1 id="userh1">Reddit User Comment History Analyzer</h1>
+                <form id="user-select-form">
+                  <label>Username: </label>
+                  <input id="user">
+                  <button type="submit">Display Results</button>
+                </form>
+                <div id="loading">
+                    <img id="loading-image" src="http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif" alt="Loading..." />
+                  </div>
+                <div class="container">
+                <div id="results-container" class="card" style="box-sizing: border-box">
+                    <h5>Searched Users Ranked</h5> 
+                </div>  
+                <div id="second-results" class="card"style="box-sizing: border-box">
+                    <div id="results-highscore-container">
+                    </div><br>
+                    <div id="results-highcomments-container">
+                    </div><br>
+                    <div id="results-highgilded-container">
+                    </div>
+
+                    <canvas id="myChart"></canvas>
+                </div> 
+                </div>
+
+
+             </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</html>
