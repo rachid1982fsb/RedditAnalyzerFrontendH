@@ -384,7 +384,7 @@ function piechart(ar){
     }
 
     function fetchUserPost(input, loginContainer){
-        fetch(`http://127.0.0.1:3000/users`).then(resp => resp.json()).then(function(userData){
+        fetch(`https://redditanalyzerbackend.herokuapp.com/users`).then(resp => resp.json()).then(function(userData){
           let found = userData.find(user => user.username === input)
           if(found){loginContainer.style.display = "none";
           console.log("The user found")
@@ -424,7 +424,7 @@ function piechart(ar){
     }
 
     function fetchSignup(userName){
-        fetch(`http://127.0.0.1:3000/users`, {
+        fetch(`https://redditanalyzerbackend.herokuapp.com/users`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -441,7 +441,7 @@ function piechart(ar){
     }
   
     function fetchUserSearch(){
-      fetch(`http://127.0.0.1:3000/user_searches`, {
+      fetch(`https://redditanalyzerbackend.herokuapp.com/user_searches`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
