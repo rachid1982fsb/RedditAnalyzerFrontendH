@@ -43,8 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fetchUserPost(userNameInput, loginContainer);
         })
     }
-
-
     const handleSubmit = e => {
       responses = [];
 
@@ -74,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         parseResults(responses);
       };
+      
       
       const parseResults = responses => {
         let allPosts = [];
@@ -401,7 +400,6 @@ function piechart(ar){
     }
 
     function signUp(){
-      const userNameInput = document.getElementById('usrLogin') 
         const loginContainer = document.getElementById("2a") 
         let taco = document.getElementById("4a")
         taco.addEventListener('click', event => {
@@ -424,10 +422,7 @@ function piechart(ar){
 
             submit.addEventListener('click', function(e){
                 e.preventDefault();
-                userNameInput.value = signUpinputUserName.value
                 fetchSignup(signUpinputUserName.value)
-                let loginP = document.getElementById('loginMessage')
-                loginP.innerText = `Your Account Has Been Created! Congratulations.  ${userNameInput.value}`
                 signupDiv.style.display = "none"
                 
             })
@@ -439,7 +434,6 @@ function piechart(ar){
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Accept: "application/json"
               Accept: "application/json"
             },
             body: JSON.stringify({username: userName})
@@ -459,6 +453,7 @@ function piechart(ar){
             }
           })
     }
+  
     function fetchUserSearch(){
       fetch(`https://redditanalyzerbackend.herokuapp.com/user_searches`, {
         method: "POST",
@@ -489,3 +484,4 @@ function piechart(ar){
       })
     }
   })
+
