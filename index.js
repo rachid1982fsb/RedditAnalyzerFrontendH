@@ -393,7 +393,10 @@ function piechart(ar){
           if(found){loginContainer.style.display = "none";
           console.log("The user found")
           hiddenApp.style.display = "block";}
-          else{console.log("Please regester first")}
+          else{
+            let loginP = document.getElementById('loginMessage')
+            loginP.innerText = `This user: "${input}" not found, Please SignUp `
+            console.log("Please regester first")}
         });
     }
 
@@ -418,11 +421,13 @@ function piechart(ar){
             signupDiv.appendChild(submit)
             signupDiv.appendChild(signUpinputUserName)
             singUpForm.appendChild(signupDiv)
-            
+
             submit.addEventListener('click', function(e){
                 e.preventDefault();
                 userNameInput.value = signUpinputUserName.value
                 fetchSignup(signUpinputUserName.value)
+                let loginP = document.getElementById('loginMessage')
+                loginP.innerText = `Your Account Has Been Created! Congratulations.  ${userNameInput.value}`
                 signupDiv.style.display = "none"
                 
             })
