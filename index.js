@@ -182,13 +182,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
           ranker = j + 1;
           const redditCard = document.createElement('a');
-          const redditCardBreak = document.createElement('br');
           redditCard.href = `https://www.reddit.com/user/${sortedArray[j][0]}`;
           redditCard.classList.add('user-card');
           redditCard.innerText = `${ranker}. ${sortedArray[j][0]} = ${sortedArray[j][1]} post(s) - ${sortedArray[j][2]} points`;
 
           const container = document.getElementById('results-container');
-          container.append(redditCard, redditCardBreak)
+          container.append(redditCard)
         }}, 3000)
 
         window.onload = function () {
@@ -321,6 +320,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function top5Subreddit(listsubreddit){
         top5 = subredditsCount(listsubreddit).slice(0, 5)
+        if(top5.length < 5){
+          for(let i=top5.length; i<5; i++){
+            top5[i]=["",0]
+          }
+        }
         fav_sub = top5[0][0]
         console.log(fav_sub)
         return top5
@@ -394,31 +398,33 @@ function piechart(ar){
     }
 
     function signUp(){
-        // const signupContainer = document.querySelector("body") 
+      const userNameInput = document.getElementById('usrLogin') 
         const loginContainer = document.getElementById("2a") 
         let taco = document.getElementById("4a")
         taco.addEventListener('click', event => {
             event.preventDefault();
-            // loginContainer.style.display = "none";
-            // const signUpDiv = document.createElement('div')
             const signUpH2 = document.createElement('h2')
             const singUpForm = document.getElementById('loginForm')
+
             signUpH2.innerHTML= "SignUp"
-            // const signUpinputName = document.createElement('input')
-            // signUpinputName.value =""
             const signUpinputUserName = document.createElement('input')
             const submit= document.createElement('button')
+            const signupDiv= document.createElement('div')
+
             submit.innerText="Submit"
             signUpinputUserName.value ="User Name"
-            singUpForm.appendChild(signUpH2)
-            singUpForm.appendChild(submit)
-            // singUpForm.appendChild(signUpinputName)
-            singUpForm.appendChild(signUpinputUserName)
-            // signUpDiv.appendChild(singUpForm)
-            // signupContainer.appendChild(signUpDiv)
+
+            signupDiv.appendChild(signUpH2)
+            signupDiv.appendChild(submit)
+            signupDiv.appendChild(signUpinputUserName)
+            singUpForm.appendChild(signupDiv)
+            
             submit.addEventListener('click', function(e){
                 e.preventDefault();
+                userNameInput.value = signUpinputUserName.value
                 fetchSignup(signUpinputUserName.value)
+                signupDiv.style.display = "none"
+                
             })
         })
     }
