@@ -440,17 +440,25 @@ function piechart(ar){
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json"
+              Accept: "application/json"
             },
             body: JSON.stringify({username: userName})
           }).then(function(resp) {
-            if (Math.floor(resp.status/200) === 1) {
-              console.log("Great ")
-            } else {
-              console.log("ERROR", resp)
+            return resp.json()
+          }).then(function(userData){
+            let userNameInput = document.getElementById('usrLogin');
+            let loginP = document.getElementById('loginMessage')
+            if (userData.username){
+              loginP.innerText = `Your Account Has Been Created! Congratulations.  ${userData.username}`
+              userNameInput.value = userData.username
+              console.log(userData.username)
             }
-          });
+            else{
+              console.log(userData.error)
+              loginP.innerText = userData.error
+            }
+          })
     }
-  
     function fetchUserSearch(){
       fetch(`https://redditanalyzerbackend.herokuapp.com/user_searches`, {
         method: "POST",
