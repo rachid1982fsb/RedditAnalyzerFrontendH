@@ -1,33 +1,33 @@
 
 #results-container {
-    float: left;
-    width: 26%;
-    padding: 10px;
-    border:1px solid black;
-    display: flex;
-    flex: 50%;
+  float: left;
+  width: 26%;
+  padding: 10px;
+  border:1px solid black;
+  display: flex;
+  flex: 50%;
 
-    height: 1500px;
+  height: 1500px;
 }
 
 #h2 {
-  text-align: center;
-  color: black;
+text-align: center;
+color: black;
 }
 
 #second-results {
-    float: left;
-    width:74%;
-    padding: 10px;
-    border:1px solid black;
-    flex: 50%;
-    height: 1500px;
+  float: left;
+  width:74%;
+  padding: 10px;
+  border:1px solid black;
+  flex: 50%;
+  height: 1500px;
 
 } 
 
 #results-highcomments-container{
-  overflow-y: auto;
-  height: 100px;
+overflow-y: auto;
+height: 100px;
 }
 
 #results-highgilded-container {
@@ -41,39 +41,39 @@ height: 100px;
 }
 
 .card {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+float: left;
+width: 50%;
+padding: 10px;
+height: 300px; /* Should be removed. Only for demonstration */
 
 }
 
 #user-select-form {
-  text-align: center;
+text-align: center;
 }
 
 #userh1 {
-  text-align: center;
+text-align: center;
 }
 
 #loading {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  display: block;
-  opacity: 0.7;
-  background-color: #fff;
-  z-index: 99;
-  text-align: center;
+width: 100%;
+height: 100%;
+position: fixed;
+display: block;
+opacity: 0.7;
+background-color: #fff;
+z-index: 99;
+text-align: center;
 }
 
 #loading-image {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  z-index: 100;
+position: absolute;
+top: 100px;
+left: 50%;
+z-index: 100;
 }
 
 #loginMessage {
-  color: red;
+color: red;
 }
