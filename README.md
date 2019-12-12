@@ -27,7 +27,9 @@ Rails API
 
 Reddit API
 
-Serializer gem
+jQuery library
+
+HTML & CSS
 
 ## Contributing
 Contributions are welcome. Feel free to open a pull request or branch from this project.
