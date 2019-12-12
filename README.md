@@ -1,5 +1,5 @@
 # Reddit Analyzer Frontend
-[Reddit Analyzer Website](https://rachid1982fsb.github.io/RedditAnalyzerFrontendH/)
+[Reddit Analyzer Website](https://rachid1982fsb.github.io/RedditAnalyzerFrontendH/).
 [backend repository](https://github.com/rachid1982fsb/RedditAnalyzerBackendH)
 
 # About
